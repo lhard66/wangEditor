@@ -8335,9 +8335,11 @@ _e(function (E, $) {
             if (menuTop === 0) {
                 menuTop = $menuContainer.offset().top;
                 editorTop = $editorContainer.offset().top;
-                editorHeight = $editorContainer.outerHeight();
                 menuHeight = $menuContainer.outerHeight();
+                // editorHeight = $editorContainer.outerHeight();
             }
+            ////因高度自动增加，固要时刻拿到编辑区的高度
+            editorHeight = $editorContainer.outerHeight();
 
             if (sTop >= menuTop && sTop + menuFixed + menuHeight + 30 < editorTop + editorHeight) {
                 // 吸顶
