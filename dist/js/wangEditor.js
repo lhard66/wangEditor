@@ -8294,9 +8294,9 @@ _e(function (E, $) {
     });
 });
 // menu吸顶
-_e(function (E, $) {
+_e(function(E, $) {
 
-    E.plugin(function () {
+    E.plugin(function() {
         var editor = this;
         var menuFixed = editor.config.menuFixed;
         if (menuFixed === false || typeof menuFixed !== 'number') {
@@ -8311,16 +8311,27 @@ _e(function (E, $) {
         var $editorContainer = editor.$editorContainer;
         var editorTop = $editorContainer.offset().top;
         var editorHeight = $editorContainer.outerHeight();
-        
+
         var $menuContainer = editor.menuContainer.$menuContainer;
         var menuCssPosition = $menuContainer.css('position');
         var menuCssTop = $menuContainer.css('top');
         var menuTop = $menuContainer.offset().top;
         var menuHeight = $menuContainer.outerHeight();
-        
+
         var $txt = editor.txt.$txt;
 
-        E.$window.scroll(function () {
+        var goFlag = false; //true表示执行过，false表示未执行。
+        E.$window.scroll(function() {            
+            //防抖动
+            if (goFlag) {
+                clearTimeout(timer);
+                var timer = setTimeout(function() {
+                    goFlag = false;
+                }, 600);
+                return;
+            }
+            goFlag = true;
+
             //全屏模式不支持
             if (editor.isFullScreen) {
                 return;
@@ -8384,6 +8395,7 @@ _e(function (E, $) {
     });
 
 });
+
 // 缩进 菜单插件
 _e(function (E, $) {
 
