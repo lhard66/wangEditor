@@ -55,8 +55,10 @@
 # 4. 本地运行demo
 
  - 确定本机安装了 `nodejs`，可使用 `node -v` 验证
- - 下载源码、解压，或者 `git clone https://github.com/wangfupeng1988/wangEditor.git` 。**注意，`windows`系统必须下载到`C盘`运行**
- - 进入源码目录，找到 `server.js` 命令行中运行 `node server.js`
+ - 下载源码、解压，或者 `git clone https://github.com/wangfupeng1988/wangEditor.git` 。
+ - 安装全局grunt，npm install -g grunt-cli
+ - 进入源码目录，npm install，然后输入：grunt，开始监控模块文件的变化。
+ - 进入源码目录，找到 `server.js` 命令行中运行 `node server.js`（此为启动web服务器，可选。若使用iis和nginx等，无需执行。）
  - 打开浏览器访问 `http://localhost:8011/test/index.html`
 
 # 5. 交流
