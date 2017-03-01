@@ -43,7 +43,7 @@ _e(function (E, $) {
                 menuHeight = $menuContainer.outerHeight();
                 // editorHeight = $editorContainer.outerHeight();
             }
-            ////因高度自动增加，固要时刻拿到编辑区的高度
+            //因高度自动增加，固要时刻拿到编辑区的高度--ltq
             editorHeight = $editorContainer.outerHeight();
 
             if (sTop >= menuTop && sTop + menuFixed + menuHeight + 30 < editorTop + editorHeight) {
