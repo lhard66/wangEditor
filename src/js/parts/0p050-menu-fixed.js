@@ -26,11 +26,7 @@ _e(function(E, $) {
         var $txt = editor.txt.$txt;
 
         var goFlag = false; //true表示执行过，false表示未执行。
-        E.$window.scroll(function() {
-            //全屏模式不支持
-            if (editor.isFullScreen) {
-                return;
-            }
+        E.$window.scroll(function() {            
             //防抖动
             if (goFlag) {
                 clearTimeout(timer);
@@ -40,7 +36,12 @@ _e(function(E, $) {
                 return;
             }
             goFlag = true;
-            
+
+            //全屏模式不支持
+            if (editor.isFullScreen) {
+                return;
+            }
+
             var sTop = E.$window.scrollTop();
 
             // 需要重新计算宽度，因为浏览器可能此时出现滚动条
